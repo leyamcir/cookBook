@@ -17,6 +17,8 @@
         <h1>CookBook, tu libro de recetas favorito</h1>
     </header>
     <section ng-controller="recipesList">
+        <input type="text" ng-model="recipeName">
+        <button ng-click="setRecipeName()">Guardar receta</button>
         <ul>
             <li ng-repeat="recipe in recipes">{{ recipe.name }}</li>
         </ul>
