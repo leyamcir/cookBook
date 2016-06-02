@@ -7,8 +7,19 @@
     <script src="node_modules/angular/angular.min.js"></script>
     <!-- Module configuration script -->
     <script src="scripts/app.js"></script>
+    <!-- Controllers -->
+    <script src="scripts/controllers/recipes-list.js"></script>
+    <!-- Services -->
+    <script src="scripts/services/recipes-service.js"></script>
 </head>
 <body ng-app="cookbook">
-
+    <header>
+        <h1>CookBook, tu libro de recetas favorito</h1>
+    </header>
+    <section ng-controller="recipesList">
+        <ul>
+            <li ng-repeat="recipe in recipes">{{ recipe.name }}</li>
+        </ul>
+    </section>
 </body>
 </html>
