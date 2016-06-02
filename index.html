@@ -11,14 +11,17 @@
     <script src="scripts/controllers/recipes-list.js"></script>
     <!-- Services -->
     <script src="scripts/services/recipes-service.js"></script>
+    <!-- Directives -->
+    <script src="scripts/directives/new-element-form.js"></script>
 </head>
 <body ng-app="cookbook">
     <header>
         <h1>CookBook, tu libro de recetas favorito</h1>
     </header>
     <section ng-controller="recipesList">
-        <input type="text" ng-model="recipeName">
-        <button ng-click="setRecipeName()">Guardar receta</button>
+        <!--input type="text" ng-model="recipeName">
+        <button ng-click="setRecipeName()">Guardar receta</button-->
+        <new-element-form on-button-click="saveRecipe(text)"></new-element-form>
         <ul>
             <li ng-repeat="recipe in recipes">{{ recipe.name }}</li>
         </ul>

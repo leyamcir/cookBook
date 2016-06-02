@@ -9,15 +9,14 @@ angular
             .then(function (response) {
                 // In 'data' property it's its body
                 $scope.recipes = response.data;
-                console.log($scope.recipes);
             });
         // Return a promise
         //console.log($scope.recipes);
 
         // Save recipe
-        $scope.setRecipeName = function () {
+        $scope.saveRecipe = function (text) {
             var recipe = {
-                name: $scope.recipeName
+                name: text
             };
 
             recipesService.saveRecipe(recipe)
