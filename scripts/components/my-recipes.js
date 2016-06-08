@@ -16,4 +16,35 @@ angular
                     self.recipes = response.data;
                 });
         }
+        /*
+        * // This would be dependency injection
+        *
+        * controller: ["recipesService", function (recipesService) {
+        *     // ...
+        * }]
+        * */
     });
+
+
+/*
+* // This would be the code using injection
+*
+ // ...
+        controller: ctrl
+ // ...
+*
+*
+*
+    var ctrl = function (recipesService) {
+        var self = this;
+
+        recipesService.getRecipes()
+        .then(function (response) {
+
+             self.recipes = response.data;
+        });
+    }
+
+    ctrl.$inject = ["recipesService"];
+*
+* */
