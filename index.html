@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Indicate page from wich Single Page Application is build -->
+    <base href="/">
     <meta charset="UTF-8">
     <title>CookBook - Recetas de cocina</title>
     <!-- Angular -->
@@ -8,6 +10,10 @@
     <script src="node_modules/@angular/router/angular1/angular_1_router.js"></script>
     <!-- Module configuration script -->
     <script src="scripts/app.js"></script>
+    <!-- Components -->
+    <script src="scripts/components/my-recipes.js"></script>
+    <script src="scripts/components/new-recipe.js"></script>
+    <script src="scripts/components/root.js"></script>
     <!-- Controllers -->
     <script src="scripts/controllers/recipes-list.js"></script>
     <!-- Services -->
@@ -16,16 +22,9 @@
     <script src="scripts/directives/new-element-form.js"></script>
 </head>
 <body ng-app="cookbook">
-    <header>
-        <h1>CookBook, tu libro de recetas favorito</h1>
-    </header>
-    <section ng-controller="recipesList">
-        <!--input type="text" ng-model="recipeName">
-        <button ng-click="setRecipeName()">Guardar receta</button-->
-        <new-element-form on-button-click="saveRecipe(text)"></new-element-form>
-        <ul>
-            <li ng-repeat="recipe in recipes">{{ recipe.name }}</li>
-        </ul>
-    </section>
+    <!-- Root component -->
+    <root></root>
+<my-recipes></my-recipes>
+
 </body>
 </html>
