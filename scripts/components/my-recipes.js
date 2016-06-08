@@ -12,6 +12,16 @@ angular
 
             // hook $onInit, fired when component is initialized
             self.$onInit = function () {
+
+                /*
+                // For several server petitions
+                $q.all([
+                    server1,
+                    server2,
+                    server3
+                ]);
+                */
+
                 recipesService.getRecipes() // Returns a promise
                     .then(function (response) {
                         // In 'data' property it's its body
