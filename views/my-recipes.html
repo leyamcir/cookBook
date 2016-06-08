@@ -1,7 +1,14 @@
 <div class="row">
     <div class="twelve columns">
-        <ul>
+        <table class="u-full-width">
+            <tbody>
+                <tr ng-repeat="recipe in $ctrl.recipes">
+                    <td>{{ recipe.name }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <!--ul>
             <li ng-repeat="recipe in $ctrl.recipes">{{ recipe.name }}</li>
-        </ul>
+        </ul-->
     </div>
 </div>
