@@ -1,19 +1,29 @@
-<header>
-    <h1>CookBook, tu libro de recetas favorito</h1>
-</header>
+<div class="container">
+    <div class="row">
+        <div class="twelve columns">
+            <header>
+                <h1>CookBook, tu libro de recetas favorito</h1>
+            </header>
+        </div>
+    </div>
 
-<nav>
-    <ul>
-        <li>
-            <!-- 'ngLink' establishes route to navigate name -->
-            <a ng-link="['MyRecipes']">Mis recetas</a>
-        </li>
-        <li>
-            <!-- 'ngLink' establishes route to navigate name -->
-            <a ng-link="['NewRecipe']">Nueva receta</a>
-        </li>
-    </ul>
-</nav>
+    <div class="row">
+        <div class="twelve columns">
+            <nav>
+                <ul>
+                    <li>
+                        <!-- 'ngLink' establishes route to navigate name -->
+                        <a ng-link="['MyRecipes']">Mis recetas</a>
+                    </li>
+                    <li>
+                        <!-- 'ngLink' establishes route to navigate name -->
+                        <a ng-link="['NewRecipe']">Nueva receta</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 
-<!-- Dynamic zone -->
-<ng-outlet></ng-outlet>
+    <!-- Dynamic zone -->
+    <ng-outlet></ng-outlet>
+</div>
