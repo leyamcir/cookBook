@@ -1,0 +1,22 @@
+<input
+    type="text"
+    class="u-full-width"
+    ng-model="$ctrl.newIngredient.name"
+    ng-keydown="$ctrl.pressedKey($event)">
+<table class="u-full-width">
+    <thead>
+        <tr>
+            <th>Ingrediente</th>
+            <th>Cantidad</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="ingredient in $ctrl.ingredients">
+            <td>{{ ingredient.name }}</td>
+            <td>
+                <input type="number" ng-model="ingredient.quantity">
+            </td>
+        </tr>
+    </tbody>
+</table>
