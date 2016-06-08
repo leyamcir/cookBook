@@ -1,4 +1,9 @@
 <div>
-    <input type="text" ng-model="text">
-    <button ng-click="notifyText()">Guardar</button>
+    <form name="newElement">
+        <input type="text" ng-model="text" required>
+        <button
+            ng-click="notifyText()"
+            ng-disabled="newElement.$invalid"
+            >Guardar</button>
+    </form>
 </div>
