@@ -3,7 +3,11 @@
         <input type="text" ng-model="filterRecipe">
         <table class="u-full-width">
             <tbody>
-                <tr ng-repeat="recipe in $ctrl.recipes | filter:filterRecipe">
+                <tr ng-repeat="recipe in $ctrl.recipes | filter:filterRecipe | orderBy:'name'">
+                <!-- To filter only by name -->
+                <!--tr ng-repeat="recipe in $ctrl.recipes | filter:{ name: filterRecipe}"-->
+                    <!-- Also available orderBy -->
+                    <!-- Filters can be concatenated -->
                     <td>
                         <div ng-click="recipe.show = !recipe.show">
                             {{ recipe.name }}
