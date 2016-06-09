@@ -1,6 +1,11 @@
 <div class="row">
     <div class="twelve columns">
-        <input type="text" ng-model="filterRecipe">
+        <label for="recipe-filter">Filtrar recetas</label>
+        <input
+            type="text"
+            id="recipe-filter"
+            placeholder="Busca una receta por su contenido"
+            ng-model="filterRecipe">
         <table class="u-full-width">
             <tbody>
                 <tr ng-repeat="recipe in $ctrl.recipes | filter:filterRecipe | orderBy:'name'">
@@ -8,6 +13,12 @@
                 <!--tr ng-repeat="recipe in $ctrl.recipes | filter:{ name: filterRecipe}"-->
                     <!-- Also available orderBy -->
                     <!-- Filters can be concatenated -->
+                    <td>
+                        <img
+                            width="60"
+                            height="60"
+                            ng-src="{{ $ctrl.getImagePath(recipe.imagePath) }}" alt="{{ recipe.name }}">
+                    </td>
                     <td>
                         <div ng-click="recipe.show = !recipe.show">
                             {{ recipe.name }}

@@ -29,7 +29,8 @@ angular
                     });
             };
             
-
+            // Get image absolute path
+            self.getImagePath = recipesService.getImageAbsolutePath;
         }
     });
 
