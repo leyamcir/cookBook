@@ -43,6 +43,13 @@ angular
                         quantity: 1
                     };
                 }
+            };
+
+            self.notifyDelete = function (index) {
+                // Notify delete element index pressed
+                self.deleteIngredient({
+                    "index": index
+                })
             }
         }
     });

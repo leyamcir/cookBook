@@ -35,6 +35,11 @@ angular.module("cookbook")
                 scope.addIngredient = function (ingredient) {
                     // Add ingredient from component to ingredients collection
                     scope.recipe.ingredients.push(ingredient);
+                };
+
+                scope.deleteIngredient = function (index) {
+                    // Delete ingredient on index position
+                    scope.recipe.ingredients.splice(index, 1); // splice(index, elements to delete from index)
                 }
             }
         }

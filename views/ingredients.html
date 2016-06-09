@@ -20,6 +20,10 @@
             <td>
                 <input type="number" ng-model="ingredient.quantity" min="1">
             </td>
+            <td>
+                <!-- $index given by Angular on ng-repeat -->
+                <button ng-click="$ctrl.notifyDelete($index)">Eliminar</button>
+            </td>
         </tr>
     </tbody>
 </table>
