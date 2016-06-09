@@ -13,10 +13,7 @@ angular
             var self = this;
 
             // Save recipe
-            self.saveRecipe = function (text) {
-                var recipe = {
-                    name: text
-                };
+            self.saveRecipe = function (recipe) {
 
                 recipesService.saveRecipe(recipe)
                     .then(function (response) {

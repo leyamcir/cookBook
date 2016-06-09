@@ -23,11 +23,11 @@ angular.module("cookbook")
                 };
 
                 // Save button handler
-                scope.notifyText = function () {
+                scope.notifySave = function () {
                     // Notify to parent scope
                     scope.onButtonClick(
                         {
-                            text: scope.text
+                            recipe: scope.recipe
                         }
                     );
                 };
@@ -40,6 +40,12 @@ angular.module("cookbook")
                 scope.deleteIngredient = function (index) {
                     // Delete ingredient on index position
                     scope.recipe.ingredients.splice(index, 1); // splice(index, elements to delete from index)
+                };
+
+                scope.ableToSave = function () {
+                    // Check if form has necessary data
+                    return (scope.recipe.name &&
+                        (scope.recipe.ingredients.length > 0));
                 }
             }
         }

@@ -4,15 +4,18 @@
         id="recipe-name"
         type="text"
         placeholder="Introduzca nombre de receta"
+        class="u-full-width"
         ng-model="recipe.name"
         required>
-    <button
-        ng-click="notifyText()"
-        ng-disabled=""
-        >Guardar</button>
 
     <ingredients
         ingredients="recipe.ingredients"
         new-ingredient="addIngredient(ingredient)"
         delete-ingredient="deleteIngredient(index)"></ingredients>
+
+    <button
+        ng-click="notifySave()"
+        ng-disabled="!ableToSave()"
+        class="u-full-width button-primary"
+    >Guardar</button>
 </div>
