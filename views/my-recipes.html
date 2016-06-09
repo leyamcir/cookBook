@@ -1,8 +1,9 @@
 <div class="row">
     <div class="twelve columns">
+        <input type="text" ng-model="filterRecipe">
         <table class="u-full-width">
             <tbody>
-                <tr ng-repeat="recipe in $ctrl.recipes">
+                <tr ng-repeat="recipe in $ctrl.recipes | filter:filterRecipe">
                     <td>
                         <div ng-click="recipe.show = !recipe.show">
                             {{ recipe.name }}
