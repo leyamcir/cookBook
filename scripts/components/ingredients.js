@@ -26,8 +26,10 @@ angular
                 // Get key pressed
                 var key = event.which || event.keyCode;
 
-                // Check intro
-                if (key === 13 && self.ingredient.name){
+                // Check intro, ingredient has name and its not added yet
+                if (key === 13 &&
+                    self.ingredient.name &&
+                    !ingredientExists(self.ingredient.name)){
                     // Insert ingredient to ingredients collection
                     //self.ingredients.push(self.newIngredient);
                     // Not the right place to add or delete elements
@@ -50,6 +52,16 @@ angular
                 self.deleteIngredient({
                     "index": index
                 })
+            };
+
+            function ingredientExists(ingredientName) {
+                var minusName = ingredientName.toLowerCase();
+
+                var coincidences = self.ingredients.filter(function (ingredient) {
+                    return (ingredient.name.toLowerCase() === minusName);
+                });
+
+                return (coincidences.length > 0);
             }
         }
     });
