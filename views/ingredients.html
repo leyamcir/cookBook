@@ -6,7 +6,9 @@
     class="u-full-width"
     ng-model="$ctrl.ingredient.name"
     ng-keydown="$ctrl.pressedKey($event)">
-<table class="u-full-width">
+<!-- ng-show shows if expression is evaluated to true and ng-hide reverse -->
+<!-- ng-if doesn't write code if expression is false -->
+<table class="u-full-width" ng-show="($ctrl.ingredients.length > 0)">
     <thead>
         <tr>
             <th>Ingrediente</th>
