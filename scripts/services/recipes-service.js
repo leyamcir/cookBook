@@ -1,7 +1,7 @@
 
 angular
     .module("cookbook")
-    .service("recipesService", function ($http) {
+    .service("recipesService", function ($http, Properties) {
         // All functionality that you want to export has to be published in this
         this.getRecipes = function () {
             /*
@@ -17,7 +17,7 @@ angular
                 }
             ];
             */
-            return $http.get("http://localhost:8000/api/recetas");
+            return $http.get(Properties.serverUrl + Properties.endpointRecipes);
         };
 
         // Save recipe
@@ -40,7 +40,7 @@ angular
 
                 // Upload image to server
                 promise = $http.post(
-                    "http://localhost:8000/upload",
+                    Properties.serverUrl + Properties.endpointImages,
                     data,
                     configuration
                 )
@@ -51,12 +51,12 @@ angular
                     // Establish img path before saving
                     recipe.imagePath = path;
 
-                    return $http.post("http://localhost:8000/api/recetas", recipe);
+                    return $http.post(Properties.serverUrl + Properties.endpointRecipes, recipe);
                 });
 
             } else {
                 // Image undefined
-                promise = $http.post("http://localhost:8000/api/recetas", recipe);
+                promise = $http.post(Properties.serverUrl + Properties.endpointRecipes, recipe);
             }
             return promise;
         };
