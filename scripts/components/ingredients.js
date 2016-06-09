@@ -15,13 +15,11 @@ angular
             self.$onInit = function () {
 
                 // newIngredient object
-                self.newIngredient = {
+                self.ingredient = {
                     name: "",
                     quantity: 1
                 };
 
-                // Ingredients collection
-                self.ingredients = [];
             };
             
             self.pressedKey = function (event) {
@@ -29,12 +27,18 @@ angular
                 var key = event.which || event.keyCode;
 
                 // Check intro
-                if (key === 13 && self.newIngredient.name){
+                if (key === 13 && self.ingredient.name){
                     // Insert ingredient to ingredients collection
-                    self.ingredients.push(self.newIngredient);
+                    //self.ingredients.push(self.newIngredient);
+                    // Not the right place to add or delete elements
+
+                    // Instead, notify new ingredient
+                    self.newIngredient({
+                        "ingredient": self.ingredient
+                    });
 
                     // reset input
-                    self.newIngredient = {
+                    self.ingredient = {
                         name: "",
                         quantity: 1
                     };

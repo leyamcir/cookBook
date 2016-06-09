@@ -1,7 +1,10 @@
+<label for="new-ingredient">Ingredientes</label>
 <input
+    id="new-ingredient"
     type="text"
+    placeholder="Nombre ingrediente"
     class="u-full-width"
-    ng-model="$ctrl.newIngredient.name"
+    ng-model="$ctrl.ingredient.name"
     ng-keydown="$ctrl.pressedKey($event)">
 <table class="u-full-width">
     <thead>
@@ -15,7 +18,7 @@
         <tr ng-repeat="ingredient in $ctrl.ingredients">
             <td>{{ ingredient.name }}</td>
             <td>
-                <input type="number" ng-model="ingredient.quantity">
+                <input type="number" ng-model="ingredient.quantity" min="1">
             </td>
         </tr>
     </tbody>

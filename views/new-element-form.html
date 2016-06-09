@@ -1,10 +1,19 @@
 <div>
     <form name="newElement">
-        <input type="text" ng-model="text" required>
+        <label for="recipe-name">Nombre de la receta</label>
+        <input
+            id="recipe-name"
+            type="text"
+            placeholder="Introduzca nombre de receta"
+            ng-model="recipe.name"
+            required>
         <button
             ng-click="notifyText()"
             ng-disabled="newElement.$invalid"
             >Guardar</button>
     </form>
-    <ingredients></ingredients>
+    <ingredients
+        ingredients="recipe.ingredients"
+        new-ingredient="addIngredient(ingredient)"
+        delete-ingredient=""></ingredients>
 </div>

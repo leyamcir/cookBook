@@ -13,8 +13,15 @@ angular.module("cookbook")
             scope: {
                 onButtonClick: "&" // Notify event to parent scope
             },
-            // With link, we either stablish directive logic or manipulate DOM in view
+            // With link, we either establish directive logic or manipulate DOM in view
             link: function (scope) {
+
+                // Create new recipe object
+                scope.recipe = {
+                    name: "",
+                    ingredients: []
+                };
+
                 // Save button handler
                 scope.notifyText = function () {
                     // Notify to parent scope
@@ -23,6 +30,11 @@ angular.module("cookbook")
                             text: scope.text
                         }
                     );
+                };
+
+                scope.addIngredient = function (ingredient) {
+                    // Add ingredient from component to ingredients collection
+                    scope.recipe.ingredients.push(ingredient);
                 }
             }
         }
