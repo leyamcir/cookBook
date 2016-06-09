@@ -3,7 +3,10 @@
         <table class="u-full-width">
             <tbody>
                 <tr ng-repeat="recipe in $ctrl.recipes">
-                    <td>{{ recipe.name }}</td>
+                    <td>
+                        <div>{{ recipe.name }}</div>
+                        <div>{{ recipe.ingredients | IngredientsResume }}</div>
+                    </td>
                 </tr>
             </tbody>
         </table>
