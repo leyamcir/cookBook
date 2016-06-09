@@ -11,11 +11,12 @@ angular
         controller: function (recipesService) {
             // Save component reference
             var self = this;
+            var recipeImage;
 
             // Save recipe
             self.saveRecipe = function (recipe) {
 
-                recipesService.saveRecipe(recipe)
+                recipesService.saveRecipe(recipe, recipeImage)
                     .then(function (response) {
                         // Old way without components
                         //$scope.recipes.push(response.data);
@@ -25,6 +26,14 @@ angular
                         // uses navigate to redirect
                         self.$router.navigate(['MyRecipes']);
                     });
+            };
+
+            self.selectImage = function (imgFile) {
+                recipeImage = imgFile;
+            };
+
+            self.deselectImage = function () {
+                recipeImage = undefined;
             }
         }
     });

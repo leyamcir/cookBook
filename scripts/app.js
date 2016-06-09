@@ -1,6 +1,11 @@
 // Module setter
 
-angular.module("cookbook", ["ngComponentRouter"]);
+angular.module(
+    "cookbook",
+    [
+        "ngComponentRouter",
+        "dahr.ng-image-picker"
+    ]);
 
 // Configure provider $locationProvider.
 // Establish navigation model HTML5 for Single Page Application to work
