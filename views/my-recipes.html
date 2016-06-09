@@ -4,8 +4,14 @@
             <tbody>
                 <tr ng-repeat="recipe in $ctrl.recipes">
                     <td>
-                        <div>{{ recipe.name }}</div>
-                        <div>{{ recipe.ingredients | IngredientsResume }}</div>
+                        <div ng-click="recipe.show = !recipe.show">
+                            {{ recipe.name }}
+                        </div>
+                        <div ng-hide="recipe.show">
+                            <small>
+                                {{ recipe.ingredients | IngredientsResume }}
+                            </small>
+                        </div>
                     </td>
                 </tr>
             </tbody>

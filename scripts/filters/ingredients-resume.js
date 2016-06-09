@@ -3,6 +3,9 @@ angular
     .module("cookbook")
     .filter("IngredientsResume", function () {
         return function (ingredients) {
+            // Ensure ingredients is a collection
+            ingredients = ingredients || [];
+
             // Iterate ingredients collection to get from each a string,
             // indicating ingredient (cant gr-)
             var collection = ingredients.reduce(function (accumulated, ingredient) {
